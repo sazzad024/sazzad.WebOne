@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sazzad's home</title>
+    <link rel="icon" href="img/title.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style_one.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script>
+        $(document).ready(function(){
+            
+
+            
+            <!-- alert($(window).height()); -->
+            $('#man').addClass('profession');
+            var abc =2;
+            function sazzad(){
+                $('#man').addClass('profession');
+                if(abc%2==0){
+                    $('#man').text('a teacher');}
+                if(abc%3==0){
+                    $('#man').text('a photographer');}
+                if(abc%4==0){
+                    $('#man').text('a developer');}
+                if(abc%5==0){
+                    $('#man').text('a bloger');}
+                if(abc%6==0){
+                    $('#man').text('a student');}
+                if(abc%7==0){
+                    $('#man').text('a designer');}
+                
+                
+                abc = abc+1;
+                }
+            function bottomins(){
+                var scrolled3 = $(window).scrollTop();
+                if( scrolled3 >= 150){
+                    $('.bottomins').css(
+                    {
+                        "opacity": "0"
+                    }
+                    );
+                    $('#heroban').fadeOut('slow');
+                }
+                else{
+                    $('.bottomins').css(
+                    {
+                        "opacity": "0.7"
+                    }
+                    );
+                    $('#heroban').fadeIn('slow');
+                }
+            }
+                
+            setInterval(sazzad,7000);
+            
+            
+            
+            $(window).scroll(function(e){
+                parallax();
+                navbar();
+                bottomins();
+                skills();
+                mystory();
+                skillsrow();
+            });
+            
+            function skillsrow(){
+                var ps = $(".skillsrow").position();
+                var pstop = ps.top + 300;
+                var scrl = $(window).scrollTop();
+                if( scrl > pstop ){
+                    $("#php").addClass("phpcss");
+                    $("#css").addClass("csscss");
+                    $("#html").addClass("htmlcss");
+                    $("#laravel").addClass("laravelcss");
+                    $("#jquery").addClass("jquerycss");
+                }
+            }
+            function mystory(){
+                var ps = $(".mystoryrow").position();
+                var pstop = ps.top + 300;
+                var scrl = $(window).scrollTop();
+                if( scrl > pstop ){
+                    $("#msfadeout").removeClass("msopacity");
+                    $("#msfadeout2").removeClass("msopacity");
+                    $("#msfadeout3").removeClass("msopacity");
+                    $("#msfadeout4").removeClass("msopacity");
+                    
+                    $("#msfadeout").addClass("msfadein");
+                    $("#msfadeout2").addClass("msfadein");
+                    $("#msfadeout3").addClass("msfadein");
+                    $("#msfadeout4").addClass("msfadein");
+                    
+                }
+            }
+            function skills(){
+                var x = $(".skillsrow").position();
+                var y = $(window).scrollTop();
+                var z = x.top + 200;
+                if(y>z){
+                    $(".skilltitle").fadeIn();
+                }
+                console.log("window: " + y + "skill: " +x.top + "  z: " +z);
+            }
+            function navbar(){
+                var hei =$(window).height();
+                var scrolled2 = $(window).scrollTop();
+                if( scrolled2 >= hei){
+                    $('#navmain').css(
+                        {
+                            "opacity": "1"
+                        }
+                    );
+                }
+                else{
+                    $('#navmain').css(
+                        {
+                            "opacity": "0"
+                        }
+                    );
+                }
+            }
+            function parallax(){
+                var scrolled = $(window).scrollTop();
+                $('.hero1').css('top',-(scrolled*0.0215)+'rem');
+                $('.hero1').css('opacity',1-(scrolled*.00075));
+            }; 
+            
+            
+            
+        });
+        $(function(){
+                $('a[href*="#":not([href="#"])]').click(function(){
+                    if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if(target.length){
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+    </script>
+    
+</head>
+<body onload="preloader()">
+<!-- pre loader 
+<div id="loadme" class = "centered">
+	<div class = "blob-1"></div>
+	<div class = "blob-2"></div>
+</div>
+  
+<!-- pre loader end -->  
+<!-- hero banner -->
+	<div class="black">
+	    <div class="container-fluid hero1">
+           
+            <div id="heroban" class="col-12 herocon">
+	            <p class="herop1">who i'am <span class="who">!</span></p>
+	            <p>i'm sazzad hossain</p>
+	            <div class="introdiv1">
+	                <p id="man" class="intro">a designer</p>
+	            </div>
+	            
+	            <div class="bottomins">
+	                <i class="fa fa-angle-down"></i>
+	                <i class="fa fa-angle-down"></i>
+	                <i class="fa fa-angle-down"></i>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+<!-- hero banner end-->	
+	
+	
+<!-- navbar -->
+	<div id="navmain" class="navbar navbarmain">
+		<div class="container-fluid con1">
+            <div class="navbar-header nvh1">
+				<button class="navbar-toggle btnsz1" data-toggle="collapse" data-target="#mynavbar">
+					<span class="icon-bar btn-black"></span>
+					<span class="icon-bar btn-black"></span>
+					<span class="icon-bar btn-black"></span>
+				</button>
+                
+            </div>
+			<div class="collapse navbar-collapse navul" id="mynavbar">
+				<ul class="nav navbar-nav navbar-center" >
+					<li><a href="#mystory" class="hvra">my story</a></li>
+					<li><a href="#skills" class="hvra">skills</a></li>
+					<li><a href="#education" class="hvra">education</a></li>
+					<li><a href="#portfollio" class="hvra">portfollio</a></li>
+					<li><a href="#blog" class="hvra">blog</a></li>
+					<li><a href="#photography" class="hvra">photography</a></li>
+					<li><a href="#contact" class="hvra">contact</a></li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+	<!-- navbar end -->	
+	
+	
+	<div class="allsection">
+    <!--    my story start -->
+	    <div id="mystory" class="container-fluid mystory">
+	        <div class="row mystoryrow">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mystory2">
+                    <p class="msopacity" id="msfadeout">My Story</p>
+	                <p class="msopacity" id="msfadeout2">Diligent and active personality. Always ready to survive a new nature and possitive attitude person as a learner. I am a student of science  and completed graduation of computer science and engineering with content result. Passion is web design and development. Working as a non professional ICT teacher of higher secondary syllabus.
+                    </p>
+                    <ul class="msopacity" id="msfadeout3">
+                        <li><b>Lives</b> in Dhaka, Bangladesh</li>
+                        <li><b>Born</b> in Bangladesh</li>
+                        <li><b>Age</b> 23</li>
+                        <li><b>Language</b> Bangla, English</li>
+                        <li><b>Hobby</b> Photography</li>
+                    </ul>
+                    
+	            </div>
+	            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mystory1 ">
+	                <img src="img/pngSazzad.png" class="img-responsive msopacity" id="msfadeout4" alt="">
+	            </div>
+	            <div></div>
+	        </div>
+	    </div>
+	    <!--    my story end -->
+	    <!--    skills start -->
+	    <div class="container-fluid skills" id="skills">
+	        <div class="row skillsrow">
+	            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skilltitle">
+	                <p>Skills</p>
+	            </div>
+	            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 skillbars">
+	                <div class="perskill">
+	                    <div class="psleft">
+	                        <div class="diamond"></div>
+	                        <div class="dline"></div>
+	                    </div>
+	                    <div class="psright">
+	                        <div class="skillname"><p>PHP</p></div>
+	                        <div class="skillbar"></div>
+	                        <div class="sprog" id="php">
+	                            <span>59%</span>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="perskill">
+	                    <div class="psleft">
+	                        <div class="diamond"></div>
+	                        <div class="dline"></div>
+	                    </div>
+	                    <div class="psright">
+	                        <div class="skillname"><p>CSS</p></div>
+	                        <div class="skillbar skillbarsubcolor"></div>
+	                        <div class="sprog" id="css">
+	                            <span>67%</span>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="perskill">
+	                    <div class="psleft">
+	                        <div class="diamond"></div>
+	                        <div class="dline"></div>
+	                    </div>
+	                    <div class="psright">
+	                        <div class="skillname"><p>HTML</p></div>
+	                        <div class="skillbar"></div>
+	                        <div class="sprog" id="html">
+	                            <span>90%</span>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="perskill">
+	                    <div class="psleft">
+	                        <div class="diamond"></div>
+	                        <div class="dline"></div>
+	                    </div>
+	                    <div class="psright">
+	                        <div class="skillname"><p>Laravel</p></div>
+	                        <div class="skillbar skillbarsubcolor"></div>
+	                        <div class="sprog" id="laravel">
+	                            <span>70%</span>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="perskill">
+	                    <div class="psleft">
+	                        <div class="diamond"></div>
+	                        <div class="dline"></div>
+	                    </div>
+	                    <div class="psright">
+	                        <div class="skillname"><p>JQuery</p></div>
+	                        <div class="skillbar"></div>
+	                        <div class="sprog" id="jquery">
+	                            <span>55%</span>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="perskillbc">
+	                    <div class="diamond"></div>
+	                </div>
+	                <div class="clr"></div>
+	            </div>
+	        </div>
+	    </div>
+	    <!--    skills end -->
+	    <!--    education start -->
+	    <div id="education" class="container-fluid education">
+	        <div class="row educationrow">
+	            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 edutitle">
+	                <p>Education</p>
+	            </div>
+	            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 edudetails">
+	                <div class="peredu">
+	                    <div class="pereduleft">
+	                        <div class="diamond"></div>
+	                        <div class="dline dlinecorrec"></div>
+	                    </div>
+	                    <div class="pereduright">
+	                        <p>B.Sc</p>
+	                        <p>B.Sc in Computer Science & Engineering <br> Daffodil International University, Dhaka, Bangladesh</p>
+	                    </div>
+	                </div>
+	                <div class="peredu">
+	                    <div class="pereduleft">
+	                        <div class="diamond"></div>
+	                        <div class="dline dlinecorrec"></div>
+	                    </div>
+	                    <div class="pereduright">
+	                        <p>Higher Scondery Certificate</p>
+	                        <p>Science Group <br>Qadirabad Cantonment Sapper College, Natore,Bangladesh</p>
+	                    </div>
+	                </div>
+	                <div class="peredu">
+	                    <div class="pereduleft">
+	                        <div class="diamond"></div>
+	                        <div class="dline dlinecorrec"></div>
+	                    </div>
+	                    <div class="pereduright">
+	                        <p>Scondery School Certificate</p>
+	                        <p>Science Group<br>Qadirabad Cantonment Public School, Natore, Bangladesh</p>
+	                    </div>
+	                </div>
+	                <div>
+	                    <div class="diamond"></div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- education end -->
+	    <!-- portfollio start -->
+	    <div id="portfollio" class="container-fluid portfollio">
+	        <div class="portfolliorow">
+	            <div class="row porthead">
+	                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 porttitle">
+	                    <p>PORTFOLLIO</p>
+	                </div>
+	                <div class="col-xs-4 col-sm-8 col-md-8 col-lg-8 portoptions">
+	                    <ul>
+	                        <li>ALL</li>
+	                        <li>Web Template</li>
+	                        <li>Site</li>
+	                        <li>Product</li>
+	                        <li>Others</li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="row portbody">
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 portbox">
+	                    <img class="portimg" src="img/port1.jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 portbox">
+	                    <img class="portimg" src="img/port2.jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 portbox">
+	                    <img class="portimg" src="img/port3.jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 portbox">
+	                    <img class="portimg" src="img/port6.jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 portbox">
+	                    <img class="portimg" src="img/port1.jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 portbox">
+	                    <img class="portimg" src="img/port5.png" alt="">
+	                </div>
+	            </div>
+	            <div class="clr"></div>
+	        </div>
+	    </div>
+<!-- portfolio end -->
+<!-- blog starts -->
+	    <div id="blog" class="container-fluid blog">
+	        <div class="blogrow">
+	            <div class="row bloghead">
+	                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 blogtitle">
+	                    <p>BLOG</p>
+	                </div>
+	                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 blogoptions">
+	                    <ul>
+	                        <li>ALL</li>
+	                        <li>IT</li>
+	                        <li>MOTIVATION</li>
+	                        <li>TRAVEL</li>
+	                        <li>OTHERS</li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="row blogbody">
+	                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 blogbox">
+	                    <div class="blefti">
+                            <i class="fas fa-angle-left"></i>
+	                    </div>
+	                </div>
+	                <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3 blogbox">
+	                    <div class="blogleft">
+	                        <div class="blogleftimg"></div>
+	                        <div class="blogleftcon">
+	                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas doloremque at ratione error provident voluptates, corporis necessitatibus magni nostrum exercitationem repellendus non molestias, adipisci. Ipsum iusto explicabo sit nulla animi!</p>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-xs-8 col-sm-4 col-md-4 col-lg-4 blogbox">
+	                    <div class="blogmid">
+	                        <div class="blogmidimg"></div>
+	                        <div class="blogmidcon">
+	                            <p>
+	                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, voluptates non ex eos praesentium harum, deserunt at animi explicabo nemo mollitia modi. Consequuntur perspiciatis voluptates, voluptas suscipit pariatur eaque sed.
+	                            </p>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3 blogbox">
+	                    <div class="blogright">
+	                        <div class="blogrightimg"></div>
+	                        <div class="blogrightcon">
+	                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem aperiam praesentium in, odio eum consequatur unde reprehenderit sint ad ducimus cupiditate pariatur, est quasi, iure, eaque vel quae temporibus sequi.</p>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 blogbox">
+	                    <div class="brighti">
+                            <i class="fas fa-angle-right"></i>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="clr"></div>
+	        </div>
+	    </div>
+	    
+<!-- blog end -->
+<!-- photography start -->
+	    <div id="photography" class="container-fluid photography">
+	        <div class="photographyrow">
+	            <div class="row photohead">
+	                <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4 phototitle">
+	                    <p>MY PHOTOGRAPHY</p>
+	                </div>
+	                <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8 photooptions">
+	                    <ul>
+	                        <li>MORE</li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="row photobody">
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 photobox">
+	                    <img class="photoimg" src="img/myphoto%20(1).jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 photobox">
+	                    <img class="photoimg" src="img/myphoto%20(2).jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 photobox">
+	                    <img class="photoimg" src="img/myphoto%20(3).jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 photobox">
+	                    <img class="photoimg" src="img/myphoto%20(4).jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 photobox">
+	                    <img class="photoimg" src="img/myphoto%20(5).jpg" alt="">
+	                </div>
+	                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 photobox">
+	                    <img class="photoimg" src="img/myphoto%20(6).jpg" alt="">
+	                </div>
+	            </div>
+	            <div class="clr"></div>
+	        </div>
+	    </div>
+<!-- photography end -->
+<!-- contact start -->
+	    <div id="contact" class="container-fluid contact">
+	        <div class="contactrow">
+	            <div class="row contacthead">
+	                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 contacttitle">
+	                    <p>CONTACT TO ME</p>
+	                </div>
+	                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 contactoptions">
+	                    <ul>
+	                        <li><i class="fab fa-twitter"></i></li>
+	                        <li><i class="fab fa-facebook"></i></li>
+	                        <li><i class="fab fa-google-plus-square"></i></li>
+	                        <li><i class="fab fa-linkedin"></i></li>
+	                        <li><i class="fab fa-flickr"></i></li>
+	                        <li><i class="fab fa-instagram"></i></li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="contactbody">
+	               <div class="row contactinfo">
+	                   <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 conphone">
+	                       <i class="fas fa-mobile-alt"></i>
+	                       <p class="contype">PHONE</p>
+	                       <p class="condetails">For any queary and instant contact you can dial it for any time</p>
+	                       <p class="conmedia">+8801521477930</p>
+	                   </div>
+	                   <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 conemail">
+                           <i class="far fa-envelope"></i>
+	                       <p class="contype">EMAIL</p>
+	                       <p class="condetails">Sent a mail for your any opinion and action</p>
+	                       <p class="conmedia">sazzadpower7@gmail.com</p>
+	                   </div>
+	                   <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 conlocation">
+                           <i class="fas fa-map-marked-alt"></i>
+	                       <p class="contype">LOCATION</p>
+	                       <p class="condetails">House-1/F, Section-12<br>Mirpur, Dhaka, Bangladesh</p>
+	                       <p class="conmedia">go to map</p>
+	                   </div>
+	               </div>
+	               <div class="row cobtactform">
+	                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 confrml">
+	                       <form action="">
+	                           <input class="smssubject" type="text" name="name" placeholder="your name"><br>
+	                           <input class="smssubject" type="text" name="sendermail" placeholder="your mail"><br>
+	                           <input class="smssubject" type="text" name="subject" placeholder="text subject">
+	                       </form>
+	                   </div>
+	                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 confrmr">
+	                       <form action="">
+	                           <input class="smsbox" type="text" name="sendersms" placeholder="your message"><br>
+	                           <button class="submitbtn">SUBMIT</button>
+	                       </form>
+	                   </div>
+	               </div>
+	            </div>
+	            <div class="clr"></div>
+	        </div>
+	    </div>
+
+
+<!-- contact end -->
+    <div class="container-fluid myfooter">
+        <div class="row myftrbody">
+            <p class="me"><i class="fas fa-code"></i> design &#38; developed by me</p>
+            <p class="copy"><i class="far fa-copyright"></i> copyright also required</p>
+            <p class="tnx">thanks for visit my site <i class="far fa-smile"></i> <i class="far fa-smile"></i></p>
+        </div>
+    </div>
+<!-- footer start -->
+
+<!-- footer end -->	    
+	    <div class="container-fluid next">
+	        
+	    </div>
+	    <div class="clr"></div>
+	</div>
+	<div class="clr"></div>
+	
+</body>
+</html>
